@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriAgenda - Dashboard Nutricionista</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Menu Lateral -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">NutriAgenda</div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action bg-light">Agenda</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Pacientes</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Assistentes</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Dietas</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Relatórios</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Conteúdo da Página -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">Menu</button>
+            </nav>
+
+            <div class="container-fluid">
+                <h1 class="mt-4">Agenda do Dia</h1>
+                <div id='calendar'></div>
+                <!-- Botão Criar Nova Consulta -->
+                <button class="btn btn-success mt-3" data-toggle="modal" data-target="#modalConsulta">Criar Nova Consulta</button>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+    <!-- Modal Criar Nova Consulta -->
+    <div class="modal fade" id="modalConsulta" tabindex="-1" role="dialog" aria-labelledby="modalConsultaLabel" aria-hidden="true">
+        <!-- Conteúdo do Modal -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <!-- Nosso script -->
+    <script src="dashboard_nutricionista.js"></script>
+</body>
+</html>
