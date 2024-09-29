@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Login - Nutriagenda</title>
-    <link rel="stylesheet" href="styles/login.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
     <header>
-      <img src="src/logo.png" alt="Logo" class="logo" />
-      <h1>Nutriagenda</h1>
+        <img src="src/logo.png" alt="Logo" class="logo">
+        <h1>Nutriagenda</h1>
     </header>
     <main>
-      <section class="login-container">
-        <h2>Login</h2>
-        <form id="formLogin">
-          <label for="emailLogin">Usuário:</label>
-          <input type="email" id="emailLogin" placeholder="Email" required />
+        <section class="login-container">
+            <h2>Login</h2>
+            <form id="formLogin">
+                <label for="emailLogin">Usuário:</label>
+                <input type="email" id="emailLogin" placeholder="Email" required>
 
-          <label for="senhaLogin">Senha:</label>
-          <input type="password" id="senhaLogin" placeholder="Senha" required />
+                <label for="senhaLogin">Senha:</label>
+                <input type="password" id="senhaLogin" placeholder="Senha" required>
 
-          <button type="submit" class="btn">Entrar</button>
-        </form>
-      </section>
+                <div class="links">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="btn" id="btnCadastro">Cadastro</button>
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </form>
+        </section>
     </main>
+    <div id="modalCadastro" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCadastro">&times;</span>
+            <h2>Cadastro de Nutricionista</h2>
+            <form id="formCadastro">
+                <label for="nomeCadastro">Nome:</label>
+                <input type="text" id="nomeCadastro" placeholder="Nome Completo" required>
+
+                <label for="emailCadastro">Email:</label>
+                <input type="email" id="emailCadastro" placeholder="Email" required>
+
+                <label for="senhaCadastro">Senha:</label>
+                <input type="password" id="senhaCadastro" placeholder="Senha" required>
+
+                <label for="confirmarSenha">Confirmar Senha:</label>
+                <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" required>
+
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
     <footer>
-      <p>&copy; 2024 NutriAgenda</p>
+        <p>&copy; 2024 NutriAgenda</p>
     </footer>
     <script type="module" src="js/login.js"></script>
-  </body>
+</body>
 </html>
