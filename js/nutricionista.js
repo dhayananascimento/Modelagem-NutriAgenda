@@ -1,5 +1,3 @@
-// js/nutricionista.js
-
 import Usuario from './usuario.js';
 import { Dados, gerarIdUnico } from './dados.js';
 
