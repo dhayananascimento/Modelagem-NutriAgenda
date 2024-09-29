@@ -1,0 +1,89 @@
+<!-- pages/Home/nutricionista.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Nutricionista</title>
+  <link rel="stylesheet" href="../../styles/home.css">
+</head>
+<body>
+  <header>
+    <img src="../../src/logo.png" alt="Logo">
+    <h1>Nutriagenda</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Pacientes</a></li>
+        <li><a href="#">Assistentes</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#" onclick="logout()">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <h2>Bem-vindo(a), <span id="nomeNutricionista">[Nome do Nutricionista]</span></h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Total de Pacientes</h3>
+          <p id="totalPacientes">0</p>
+        </div>
+        <div class="card">
+          <h3>Total de Assistentes</h3>
+          <p id="totalAssistentes">0</p>
+        </div>
+      </div>
+
+      <button class="btn" id="btnAlterarSenha">Alterar Senha</button>
+      <button class="btn" id="btnDadosCadastro">Dados de Cadastro</button>
+      <button class="btn" id="btnGerenciarPaciente">Gerenciar Pacientes</button>
+      <button class="btn" id="btnGerenciarAssistente">Gerenciar Assistentes</button>
+      <button class="btn" id="btnGerenciarUsuario">Gerenciar Novo Usuário</button>
+      <button class="btn" id="btnGerenciarConsulta">Gerenciar Consulta</button>
+
+    </section>
+
+    <div id="modalSelecao" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeSelecao">&times;</span>
+        <h2>Gerenciar Novo Usuário</h2>
+        <button class="btn" id="btnCadastrarPaciente">Cadastrar Paciente</button>
+        <button class="btn" id="btnCadastrarAssistente">Cadastrar Assistente</button>
+      </div>
+    </div>
+
+    <div id="modalPaciente" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closePaciente">&times;</span>
+        <h2>Cadastrar Novo Paciente</h2>
+        <form id="formPaciente">
+          <input type="text" id="nomePaciente" placeholder="Nome do Paciente" required>
+          <input type="email" id="emailPaciente" placeholder="Email do Paciente" required>
+          <input type="password" id="senhaPaciente" placeholder="Senha" required>
+          <button type="submit">Cadastrar Paciente</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalAssistente" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeAssistente">&times;</span>
+        <h2>Cadastrar Novo Assistente</h2>
+        <form id="formAssistente">
+          <input type="text" id="nomeAssistente" placeholder="Nome do Assistente" required>
+          <input type="email" id="emailAssistente" placeholder="Email do Assistente" required>
+          <input type="password" id="senhaAssistente" placeholder="Senha" required>
+          <button type="submit">Cadastrar Assistente</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 - NutriAgenda</p>
+  </footer>
+
+  <script type="module" src="../../js/nutricionistaPage.js"></script>
+</body>
+</html>

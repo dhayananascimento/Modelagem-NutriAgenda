@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriAgenda - Gerenciar Usuários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Script para controle de acesso -->
+    <script>
+        const tipoUsuario = localStorage.getItem('tipoUsuario');
+        if (tipoUsuario !== 'admin') {
+            window.location.href = 'acesso_negado.html';
+        }
+    </script>
+
+    <header>
+        <h1>Gerenciar Usuários</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard_admin.html">Painel de Administração</a></li>
+                <li><a href="logout.html">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Lista de Usuários</h2>
+        <table id="tabelaUsuarios">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Usuários serão listados aqui via JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2023 NutriAgenda</p>
+    </footer>
+
+    <!-- Importar o banco de usuários -->
+    <script src="usuarios.js"></script>
+    <script src="gerenciar_usuarios.js"></script>
+</body>
+</html>

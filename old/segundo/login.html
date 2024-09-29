@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriAgenda - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NutriAgenda - Login</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="loginForm">
+            <h2>Entre na sua conta</h2>
+            <div class="form-group">
+                <label for="email">Usuário (E-mail):</label>
+                <input type="text" id="email" name="email" placeholder="Seu e-mail ou usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+            </div>
+            <button type="submit" class="btn">Entrar</button>
+            <p class="options">
+                <a href="#">Esqueci minha senha</a> | <a href="cadastro.html">Cadastre-se</a>
+            </p>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 NutriAgenda</p>
+    </footer>
+
+    <!-- Importar o banco de usuários -->
+    <script src="usuarios.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

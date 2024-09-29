@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriAgenda - Cadastro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Cadastro de Usuário</h2>
+        <form id="cadastroForm" class="mt-4">
+            <!-- Campos de cadastro -->
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" class="form-control" id="nome" required>
+            </div>
+            <!-- Outros campos como Data de Nascimento, CPF, etc. -->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="termos" required>
+                <label class="form-check-label" for="termos">Aceito os Termos de Uso e Política de Privacidade</label>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+        </form>
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>
