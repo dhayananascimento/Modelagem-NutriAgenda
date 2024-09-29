@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutriagenda - Nutricionista</title>
+    <link rel="stylesheet" href="../../styles/home.css">
+    <link rel="stylesheet" href="../../styles/gerenciarAvaliacao.css">
+
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+</head>
+<body>
+    <header>
+        <img src="../../src/logo.png" alt="Logo" class="logo">
+        <h1>Nutriagenda</h1>
+        <nav>
+            <ul>
+                <li><a href="../Home/nutricionista.html">Home</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="#">Assistentes</a></li>
+                <li><a href="#" onclick="logout()">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="avaliacao-container">
+            <h2>Gerenciamento de Avaliação Física</h2>
+            <div class="avaliacao-controls">
+                <input type="text" id="searchAvaliacao" placeholder="Pesquisar avaliacao..." />
+                <button class="btn" id="btnNovaAvaliacao" title="ADICIONAR NOVA AVALIAÇÃO"><i class="fas fa-plus"></i></button>
+            </div>
+            
+
+            <table id="tabelaAvaliacao">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de avaliacões serão inseridas aqui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal de Cadastro de Avaliação -->
+    <div id="modalCadastroAvaliacao" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCadastroAvaliacao">&times;</span>
+            <h2>Cadastrar Nova Avaliação</h2>
+            <form id="formCadastroAvaliacao">
+                
+            <label for="peso">Peso</label>
+            <input type="text" id="peso" required />
+        
+
+            
+            <label for="altura">Altura</label>
+            <input type="text" id="altura" required />
+            
+
+            
+            <label for="imc">IMC</label>
+            <input type="text" id="imc" required />
+            
+
+            
+            <label for="gorduta">% Gordura</label>
+            <input type="text" id="gorduta" required />
+            
+
+            
+            <label for="abdomen">Abdômen</label>
+            <input type="text" id="abdomen" required />
+            
+
+            
+            <label for="cintura">Cintura</label>
+            <input type="text" id="cintura" required />
+            
+
+            
+            <label for="bicepsEsquerdo">Biceps Esquerdo</label>
+            <input type="text" id="bicepsEsquerdo" required />
+            
+
+            
+            <label for="bicepsDireito">Biceps Direito</label>
+            <input type="text" id="bicepsDireito" required />
+            
+
+            
+            <label for="coxaEsquerda">Coxa Esquerda</label>
+            <input type="text" id="coxaEsquerda" required />
+            
+
+            
+            <label for="coxaDireita">Coxa Direita</label>
+            <input type="text" id="coxaDireita" required />
+            
+
+            
+            <label for="panturrilhaEsquerda">Panturrilha Esquerda</label>
+            <input type="text" id="panturrilhaEsquerda" required />
+            
+
+            
+            <label for="panturrilhaDireita">Panturrilha Direita</label>
+            <input type="text" id="panturrilhaDireita" required />
+            
+
+            
+            <label for="pescoco">Pescoço</label>
+            <input type="text" id="pescoco" required />
+            
+
+            
+            <label for="tricepsEsquerdo">Tríceps Esquerdo</label>
+            <input type="text" id="tricepsEsquerdo" required />
+            
+
+            
+            <label for="tricepsDireito">Tríceps Direito</label>
+            <input type="text" id="tricepsDireito" required />
+            
+
+            
+            <label for="subescapular">Subescapular</label>
+            <input type="text" id="subescapular" required />
+            
+
+            
+            <label for="axilarMedia">Axilar Média</label>
+            <input type="text" id="axilarMedia" required />
+            
+
+            
+            <label for="peitoral">Peitoral</label>
+            <input type="text" id="peitoral" required />
+            
+
+            
+            <label for="supraIliaca">Supra-ilíaca</label>
+            <input type="text" id="supraIliaca" required />
+            
+
+            
+            <label for="supraEspinhal">Supra-espinhal</label>
+            <input type="text" id="supraEspinhal" required />
+            
+        </div>
+
+        <button type="submit" class="btn">Cadastrar Avaliação</button>
+    </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nutriagenda</p>
+    </footer>
+
+    <script type="module" src="../../js/gerenciarAvaliacao.js"></script>
+</body>
+</html>
