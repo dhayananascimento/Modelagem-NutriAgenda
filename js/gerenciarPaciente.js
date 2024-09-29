@@ -1,11 +1,11 @@
 import { Dados } from './dados.js';
 import Nutricionista from './nutricionista.js';
-import Usuario from './usuario.js';
+import Paciente from './paciente.js';
 
 // Variável Global para armazenar o nutricionista logado
 let nutricionistaLogado;
 
-// Função de logout
+// Função de logout (para ser chamada a partir do HTML)
 function logout() {
     sessionStorage.removeItem('usuarioLogadoId');
     window.location.href = '../../index.html';
@@ -43,8 +43,10 @@ function listarPacientes(filtro = '') {
     const dados = Dados.carregarDados();
     const tabelaPacientes = document.getElementById('tabelaPacientes').getElementsByTagName('tbody')[0];
 
+    // Limpar tabela antes de listar
     tabelaPacientes.innerHTML = '';
 
+    // Iterar sobre os pacientes do nutricionista
     nutricionistaLogado.pacientes.forEach(pacienteId => {
         const pacienteData = dados.pacientes.find(p => p.id === pacienteId);
         if (pacienteData) {
@@ -60,28 +62,25 @@ function listarPacientes(filtro = '') {
                 // Container para os ícones de ação
                 const acoesDiv = document.createElement('div');
                 acoesDiv.className = 'acoes';
-                
+
                 // Ícone de Gerenciar Atendimento
                 const btnGerenciar = document.createElement('i');
-                btnGerenciar.className = 'fas fa-hands-helping';
+                btnGerenciar.className = 'fa-solid fa-hands-helping';
                 btnGerenciar.setAttribute('data-tooltip', 'Gerenciar Atendimento');
-                btnGerenciar.title = 'Gerenciar Atendimento'; // Alternativa para acessibilidade
                 btnGerenciar.addEventListener('click', () => gerenciarAtendimento(pacienteData.id));
                 acoesDiv.appendChild(btnGerenciar);
 
                 // Ícone de Editar
                 const btnEditar = document.createElement('i');
-                btnEditar.className = 'fas fa-edit';
+                btnEditar.className = 'fa-solid fa-edit';
                 btnEditar.setAttribute('data-tooltip', 'Editar');
-                btnEditar.title = 'Editar'; // Alternativa para acessibilidade
                 btnEditar.addEventListener('click', () => editarPaciente(pacienteData.id));
                 acoesDiv.appendChild(btnEditar);
 
                 // Ícone de Excluir
                 const btnExcluir = document.createElement('i');
-                btnExcluir.className = 'fas fa-trash-alt';
+                btnExcluir.className = 'fa-solid fa-trash-alt';
                 btnExcluir.setAttribute('data-tooltip', 'Excluir');
-                btnExcluir.title = 'Excluir'; // Alternativa para acessibilidade
                 btnExcluir.addEventListener('click', () => removerPaciente(pacienteData.id));
                 acoesDiv.appendChild(btnExcluir);
 
@@ -91,33 +90,73 @@ function listarPacientes(filtro = '') {
     });
 }
 
+// Função para abrir o modal de cadastro de paciente
 function abrirModalCadastroPaciente() {
     const modal = document.getElementById('modalCadastroPaciente');
     modal.style.display = 'block';
 }
 
+// Função para fechar o modal de cadastro de paciente
 function fecharModalCadastroPaciente() {
     const modal = document.getElementById('modalCadastroPaciente');
     modal.style.display = 'none';
 }
 
+// Função para cadastrar um novo paciente
 function cadastrarPaciente(event) {
     event.preventDefault();
 
     const nome = document.getElementById('nomePaciente').value.trim();
     const email = document.getElementById('emailPaciente').value.trim();
-    const senha = document.getElementById('senhaPaciente').value.trim();
+    const cpf = document.getElementById('cpfPaciente').value.trim();
+    const dataNascimento = document.getElementById('dataNascimentoPaciente').value;
+    const telefone = document.getElementById('telefonePaciente').value.trim();
+    const cep = document.getElementById('cepPaciente').value.trim();
+    const estado = document.getElementById('estadoPaciente').value.trim();
+    const cidade = document.getElementById('cidadePaciente').value.trim();
+    const bairro = document.getElementById('bairroPaciente').value.trim();
+    const rua = document.getElementById('ruaPaciente').value.trim();
+    const numero = document.getElementById('numeroPaciente').value.trim();
+    const complemento = document.getElementById('complementoPaciente').value.trim();
 
     // Validações básicas
-    if (!nome || !email || !senha) {
-        alert('Por favor, preencha todos os campos.');
+    if (!nome || !email || !cpf || !dataNascimento || !telefone || !cep || !estado || !cidade || !bairro || !rua || !numero) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
         return;
     }
 
     try {
-        nutricionistaLogado.cadastrarPaciente(nome, email, senha);
+        const novoPaciente = new Paciente(
+            gerarIdUnico(),
+            nome,
+            email,
+            'senhaPadrao', 
+            nutricionistaLogado.id,
+            cpf,
+            dataNascimento,
+            telefone,
+            cep,
+            estado,
+            cidade,
+            bairro,
+            rua,
+            numero,
+            complemento
+        );
+
+        // Adiciona o paciente ao banco de dados via Nutricionista
+        nutricionistaLogado.cadastrarPaciente(
+            nome,
+            email,
+            'senhaPadrao'
+        );
+
         alert('Paciente cadastrado com sucesso!');
+
+        // Atualizar a tabela de pacientes
         listarPacientes(document.getElementById('searchPaciente').value.trim());
+
+        // Fechar o modal e limpar o formulário
         fecharModalCadastroPaciente();
         document.getElementById('formCadastroPaciente').reset();
     } catch (error) {
@@ -125,8 +164,9 @@ function cadastrarPaciente(event) {
     }
 }
 
-// Função para editar um paciente TODO
+// Função para editar um paciente (a implementar conforme necessidade)
 function editarPaciente(pacienteId) {
+    // Implementar funcionalidade de edição
     alert(`Função de editar paciente com ID: ${pacienteId} ainda não implementada.`);
 }
 
