@@ -1,0 +1,102 @@
+<!-- pages/Home/pacientes.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutriagenda - Nutricionista</title>
+    <link rel="stylesheet" href="../../styles/home.css">
+    <link rel="stylesheet" href="../../styles/gerenciarConsulta.css">
+
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+</head>
+<body>
+    <header>
+        <img src="../../src/logo.png" alt="Logo" class="logo">
+        <h1>Nutriagenda</h1>
+        <nav>
+            <ul>
+                <li><a href="../Home/nutricionista.html">Home</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="#">Assistentes</a></li>
+                <li><a href="#" onclick="logout()">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="pacientes-container">
+            <h2>Gerenciamento de Consultas</h2>
+            <div class="pacientes-controls">
+                <input type="text" id="searchConsulta" placeholder="Pesquisar Consulta..." />
+                <button class="btn" id="btnCriarConsulta"  title="ADICIONAR NOVA CONSULTA"><i class="fas fa-plus"></i></button>
+            </div>
+            
+
+            <table id="tabelaConsultas">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th> Data </th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de pacientes serão inseridas aqui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="modalCriarConsulta" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCriarConsulta">&times;</span>
+            <h2>Cadastrar Nova Consulta</h2>
+            <form id="formCadastroConsulta">
+                <label for="nomePaciente">Nome:</label>
+                <input type="text" id="nomePaciente" placeholder="Nome Completo" required />
+
+                <label for="cpfPaciente">CPF:</label>
+                <input type="text" id="cpfPaciente" placeholder="CPF" required />
+
+                <label for="dataPaciente">DATA:</label>
+                <input type="date" id="dataPaciente" placeholder="data" required />
+
+
+                <button type="submit" class="btn" id="criarConsulta" >Cadastrar Consulta</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalModificarConsulta" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModificarConsulta">&times;</span>
+            <h2>Modificar Consulta</h2>
+            <form id="formModificarConsulta">
+                <label for="nomePaciente">Nome:</label>
+                <input type="text" id="nomePaciente" placeholder="Nome Completo" required />
+
+                <label for="cpfPaciente">CPF:</label>
+                <input type="text" id="cpfPaciente" placeholder="CPF" required />
+
+                <label for="dataPaciente">Data:</label>
+                <input type="text" id="dataPaciente" placeholder="data" required />
+
+                <label for="statusPaciente">Status:</label>
+                <input type="text" id="statusPaciente" placeholder="status" required />
+
+
+                <button type="submit" class="btn" id="ModificarConsulta" >Modificar Consulta</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nutriagenda</p>
+    </footer>
+
+    <script type="module" src="../../js/gerenciarConsulta.js"></script>
+</body>
+</html>

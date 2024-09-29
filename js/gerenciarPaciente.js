@@ -12,14 +12,13 @@ function logout() {
 }
 
 // Função para carregar o nutricionista logado
-function carregarNutricionista() {
+function  carregarNutricionista() {
     const usuarioId = sessionStorage.getItem('usuarioLogadoId');
     if (!usuarioId) {
         alert('Você precisa estar logado para acessar esta página.');
         window.location.href = '../../index.html';
         return;
     }
-
     const dados = Dados.carregarDados();
     const nutricionistaData = dados.nutricionistas.find(n => n.id === usuarioId);
 
@@ -37,6 +36,7 @@ function carregarNutricionista() {
         window.location.href = '../../index.html';
     }
 }
+
 
 // Função para listar os pacientes na tabela
 function listarPacientes(filtro = '') {
