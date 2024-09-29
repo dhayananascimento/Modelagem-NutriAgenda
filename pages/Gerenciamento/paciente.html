@@ -1,0 +1,77 @@
+<!-- pages/Home/pacientes.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutriagenda - Nutricionista</title>
+    <link rel="stylesheet" href="../../styles/home.css">
+    <link rel="stylesheet" href="../../styles/gerenciarPacientes.css">
+
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+</head>
+<body>
+    <header>
+        <img src="../../src/logo.png" alt="Logo" class="logo">
+        <h1>Nutriagenda</h1>
+        <nav>
+            <ul>
+                <li><a href="../Home/nutricionista.html">Home</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="#">Assistentes</a></li>
+                <li><a href="#" onclick="logout()">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="pacientes-container">
+            <h2>Gerenciamento de Pacientes</h2>
+            <div class="pacientes-controls">
+                <input type="text" id="searchPaciente" placeholder="Pesquisar Paciente..." />
+                <button class="btn" id="btnNovoPaciente" title="ADICIONAR NOVO PACIENTE"><i class="fas fa-plus"></i></button>
+            </div>
+            
+
+            <table id="tabelaPacientes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de pacientes serão inseridas aqui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="modalCadastroPaciente" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCadastroPaciente">&times;</span>
+            <h2>Cadastrar Novo Paciente</h2>
+            <form id="formCadastroPaciente">
+                <label for="nomePaciente">Nome:</label>
+                <input type="text" id="nomePaciente" placeholder="Nome Completo" required />
+
+                <label for="emailPaciente">Email:</label>
+                <input type="email" id="emailPaciente" placeholder="Email" required />
+
+                <label for="senhaPaciente">Senha:</label>
+                <input type="password" id="senhaPaciente" placeholder="Senha" required />
+
+                <button type="submit" class="btn">Cadastrar Paciente</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nutriagenda</p>
+    </footer>
+
+    <script type="module" src="../../js/gerenciarPaciente.js"></script>
+</body>
+</html>
