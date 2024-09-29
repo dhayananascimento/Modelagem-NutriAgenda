@@ -1,0 +1,103 @@
+<!-- pages/Home/assistentes.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Assistentes - Nutricionista</title>
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../../styles/home.css">
+    <link rel="stylesheet" href="../../styles/gerenciarAssistente.css">
+</head>
+<body>
+    <header>
+        <img src="../../src/logo.png" alt="Logo" class="logo">
+        <h1>Nutriagenda</h1>
+        <nav>
+            <ul>
+                <li><a href="../Home/nutricionista.html">Home</a></li>
+                <li><a href="../Gerenciamento/paciente.html">Pacientes</a></li>
+                <li><a href="../Gerenciamento/assistente.html">Assistentes</a></li>
+                <li><a href="#" onclick="logout()">Sair</a></li>
+                <!-- TODO: CORRIGIR LOGOUT NÃO FUNCIONA -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="assistentes-container">
+            <h2>Gerenciamento de Assistentes</h2>
+            <div class="assistentes-controls">
+                <input type="text" id="searchAssistente" placeholder="Pesquisar Assistente..." />
+                <button class="btn" id="btnNovoAssistente"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <table id="tabelaAssistentes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de assistentes -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal de Cadastro de Assistente -->
+    <div id="modalCadastroAssistente" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCadastroAssistente">&times;</span>
+            <h2>Cadastrar Novo Assistente</h2>
+            <form id="formCadastroAssistente">
+                <label for="nomeAssistente">Nome:</label>
+                <input type="text" id="nomeAssistente" placeholder="Nome Completo" required />
+
+                <label for="emailAssistente">Email:</label>
+                <input type="email" id="emailAssistente" placeholder="Email" required />
+
+                <label for="cpfAssistente">CPF:</label>
+                <input type="text" id="cpfAssistente" placeholder="CPF" required />
+
+                <label for="dataNascimentoAssistente">Data de Nascimento:</label>
+                <input type="date" id="dataNascimentoAssistente" required />
+
+                <label for="telefoneAssistente">Telefone:</label>
+                <input type="tel" id="telefoneAssistente" placeholder="Telefone" required />
+
+                <label for="cepAssistente">CEP:</label>
+                <input type="text" id="cepAssistente" placeholder="CEP" required />
+
+                <label for="estadoAssistente">Estado:</label>
+                <input type="text" id="estadoAssistente" placeholder="Estado" required />
+
+                <label for="cidadeAssistente">Cidade:</label>
+                <input type="text" id="cidadeAssistente" placeholder="Cidade" required />
+
+                <label for="bairroAssistente">Bairro:</label>
+                <input type="text" id="bairroAssistente" placeholder="Bairro" required />
+
+                <label for="ruaAssistente">Rua:</label>
+                <input type="text" id="ruaAssistente" placeholder="Rua" required />
+
+                <label for="numeroAssistente">Número:</label>
+                <input type="text" id="numeroAssistente" placeholder="Número" required />
+
+                <label for="complementoAssistente">Complemento:</label>
+                <input type="text" id="complementoAssistente" placeholder="Complemento (Opcional)" />
+
+                <button type="submit" class="btn">Cadastrar Assistente</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nutriagenda</p>
+    </footer>
+
+    <script type="module" src="../../js/gerenciarAssistente.js"></script>
+</body>
+</html>
