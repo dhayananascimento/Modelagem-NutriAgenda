@@ -151,14 +151,19 @@
     color: var(--cor-principal);
 }
 
+.modal-content form {
+    margin-top: 20px;
+}
+
 .modal-content form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.modal-content form input {
+.modal-content form input,.modal-content form textarea {
     width: 100%;
+    max-width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
